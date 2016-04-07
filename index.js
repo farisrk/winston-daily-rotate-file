@@ -82,6 +82,7 @@ var DailyRotateFile = module.exports = function (options) {
   this.eol         = options.eol || os.EOL;
   this.maxRetries  = options.maxRetries || 2;
   this.prepend     = options.prepend     || false;
+  this.preserveExt = options.preserveExt || false;
 
   if (this.json) {
     this.stringify = options.stringify;
@@ -591,13 +592,18 @@ DailyRotateFile.prototype._getFile = function (inc) {
 
 //
 // ### @private function _getFilename ()
-// Returns the log filename depending on `this.prepend` option value
+// Returns the log filename depending on `this.prepend` or `this.preserveExt` option value
 //
 DailyRotateFile.prototype._getFilename = function () {
   var formattedDate = this.getFormattedDate();
 
   if (this.prepend) {
     return formattedDate + this._basename;
+  }
+
+  if (this.preserveExt) {
+    var parsed = path.parse(this._basename);
+    return parsed.name + '_' + formattedDate + parsed.ext;
   }
 
   return this._basename + formattedDate;
