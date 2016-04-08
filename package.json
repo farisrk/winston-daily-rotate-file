@@ -1,7 +1,7 @@
 {
-  "name": "winston-daily-rotate-file",
-  "version": "1.0.1",
-  "description": "A transport for winston which logs to a rotating file each day.",
+  "name": "winston-rotate-file",
+  "version": "1.0.0",
+  "description": "A transport for winston which logs to a rotating file.",
   "main": "index.js",
   "scripts": {
     "test": "vows test/simple.tests.js --spec",
@@ -11,22 +11,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:winstonjs/winston-daily-rotate-file.git"
+    "url": "git@github.com:farisrk/winston-rotate-file.git"
   },
   "keywords": [
     "winston",
-    "daily-rotate-file",
+    "rotate-file",
     "log-rotate",
     "logrotate"
   ],
-  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "author": "Faris Khan <farisrk@yahoo.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/winstonjs/winston-daily-rotate-file/issues"
+    "url": "https://github.com/farisrk/winston-rotate-file/issues"
   },
-  "homepage": "https://github.com/winstonjs/winston-daily-rotate-file#readme",
+  "homepage": "https://github.com/farisrk/winston-rotate-file#readme",
   "dependencies": {
-    "winston": "~2.1.0"
+    "winston": "~2.2.0"
   },
   "devDependencies": {
     "vows": "~0.8.1"

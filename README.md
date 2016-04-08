@@ -1,23 +1,20 @@
-# winston-daily-rotate-file
+# winston-rotate-file
 
-[![NPM](https://nodei.co/npm/winston-daily-rotate-file.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/winston-daily-rotate-file/)
+[![NPM](https://nodei.co/npm/winston-rotate-file.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/winston-rotate-file/)
 
-[![Circle CI](https://circleci.com/gh/winstonjs/winston-daily-rotate-file.svg?style=shield)](https://circleci.com/gh/winstonjs/winston-daily-rotate-file)
-[![devDependency Status](https://david-dm.org/winstonjs/winston-daily-rotate-file.svg)](https://david-dm.org/winstonjs/winston-daily-rotate-file#info=devDependencies)
-
-
-A transport for winston which logs to a rotating file each day.
+A transport for winston which logs to a rotating file.
 
 ## Usage
 
 ``` js
-  winston.add(require('winston-daily-rotate-file'), options)
+  winston.add(require('winston-rotate-file'), options)
 ```
 
-The DailyRotateFile transport can rotate files by minute, hour, day, month or year. In addition to the options accepted by the File transport, the Daily Rotate File Transport also accepts the following options:
+The RotateFile transport can rotate files by minute, hour, day, month or year. In addition to the options accepted by the File transport, the Rotate File Transport also accepts the following options:
 
 * __datePattern:__ A string representing the pattern to be used when appending the date to the filename (default '.yyyy-MM-dd'). The meta characters used in this string will dictate the frequency of the file rotation. For example, if your datePattern is simply '.HH' you will end up with 24 log files that are picked up and appended to every day.
 * __prepend:__ Defines if the rolling time of the log file should be prepended at the begging of the filename (default `false`)
+* __preserveExt:__ Defines if the rolling time of the log file should be appended to the filename while preserving the file extension (default `false`)
 
 Valid meta characters in the datePattern are:
 
